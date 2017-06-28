@@ -9,17 +9,17 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'solovideojuegos'
+BOT_NAME = 'Scrapysolovideojuegos'
 
-SPIDER_MODULES = ['solovideojuegos.spiders']
-NEWSPIDER_MODULE = 'solovideojuegos.spiders'
+SPIDER_MODULES = ['Scrapysolovideojuegos.spiders']
+NEWSPIDER_MODULE = 'Scrapysolovideojuegos.spiders'
 
 #CSV IMPORTACION
-ITEM_PIPELINES = {'solovideojuegos.pipelines.solovideojuegosPipeline': 500,
-					'solovideojuegos.pipelines.solovideojuegosPipeline': 600, }
+ITEM_PIPELINES = {'Scrapysolovideojuegos.pipelines.SVGPipeline': 500,
+					'Scrapysolovideojuegos.pipelines.SVGPipeline': 600, }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'solovideojuegos (+http://www.yourdomain.com)'
+#USER_AGENT = 'Scrapysolovideojuegos (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True

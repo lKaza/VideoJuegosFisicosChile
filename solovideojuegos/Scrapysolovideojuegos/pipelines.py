@@ -19,25 +19,30 @@ import hashlib
 from scrapy.exceptions import DropItem
 from scrapy.http import Request
 
-class SernaturPipeline(object):
+class SVGPipeline(object):
 	def __init__(self):
 		self.conn = MySQLdb.connect('localhost', 'root', '', 'solovideojuegos', charset="utf8", use_unicode=True)
 		self.cursor = self.conn.cursor()
 
 	def process_item(self, item, spider):    
 		try:
-			self.cursor.execute("INSERT INTO solovideojuegos (titulo, precio) VALUES (%s, %s)", (item['titulo'], item['precio']) )
+		
+			self.cursor.execute("INSERT INTO solovideojuegos (titulo,precio,tienda) VALUES (%s,%s,%s)" , (item['titulo'],item['precio'],'ZMART'))
 
 			self.conn.commit()
 
 
 		except MySQLdb.Error, e:
-			print "Error %d: %s" % (e.args[0], e.args[1])
+			print "Error %d: %s" % (e.args[0],e.args[1])
 
 
 		return item
+
 """
 Para exportar a un CSV
+
+
+class SVGPipeline(object):
 	def __init__(self):
 		self.files = {}
 
@@ -52,7 +57,7 @@ Para exportar a un CSV
 		file = open('%s_items.csv' % spider.name, 'w+b')
 		self.files[spider] = file
 		self.exporter = CsvItemExporter(file)
-		self.exporter.fields_to_export = ['titulo','direccion', 'telefono', 'email', 'clas', 'sitioweb', 'maps']
+		self.exporter.fields_to_export = ['titulo','precio']
 		self.exporter.start_exporting()
 
 	def spider_closed(self, spider):

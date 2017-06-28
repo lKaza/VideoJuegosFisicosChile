@@ -8,7 +8,7 @@
 import scrapy
 
 
-class SernaturItem(scrapy.Item):
+class SVGItem(scrapy.Item):
 	# define the fields for your item here like:
 	# name = scrapy.Field()
 
