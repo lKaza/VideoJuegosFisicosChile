@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for solovideojuegos project
+# Scrapy settings for ScrapySVGTodoJuegos project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,24 +9,19 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'Scrapysolovideojuegos'
+BOT_NAME = 'ScrapySVGTodoJuegos'
 
-SPIDER_MODULES = ['Scrapysolovideojuegos.spiders']
-NEWSPIDER_MODULE = 'Scrapysolovideojuegos.spiders'
+SPIDER_MODULES = ['ScrapySVGTodoJuegos.spiders']
+NEWSPIDER_MODULE = 'ScrapySVGTodoJuegos.spiders'
 
-#CSV IMPORTACION
-ITEM_PIPELINES = {'Scrapysolovideojuegos.pipelines.SVGPipeline': 500,
-					'Scrapysolovideojuegos.pipelines.SVGPipeline': 600, }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'Scrapysolovideojuegos (+http://www.yourdomain.com)'
+#USER_AGENT = 'ScrapySVGTodoJuegos (+http://www.yourdomain.com)'
+ITEM_PIPELINES = {'ScrapySVGTodoJuegos.pipelines.ScrapysvgtodojuegosPipeline': 500,
+					'ScrapySVGTodoJuegos.pipelines.ScrapysvgtodojuegosPipeline': 600, }
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-
-#Imagenes
-IMAGES_STORE = '/URL/DE/TU/DIRECTORIO/imagenes'
-DOWNLOAD_DELAY = 2
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -54,13 +49,13 @@ DOWNLOAD_DELAY = 2
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'solovideojuegos.middlewares.solovideojuegosSpiderMiddleware': 543,
+#    'ScrapySVGTodoJuegos.middlewares.ScrapysvgtodojuegosSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'solovideojuegos.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'ScrapySVGTodoJuegos.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -72,7 +67,7 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'solovideojuegos.pipelines.solovideojuegosPipeline': 300,
+#    'ScrapySVGTodoJuegos.pipelines.ScrapysvgtodojuegosPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

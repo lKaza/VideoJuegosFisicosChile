@@ -27,7 +27,7 @@ class SVGPipeline(object):
 	def process_item(self, item, spider):    
 		try:
 		
-			self.cursor.execute("INSERT INTO solovideojuegos (titulo,precio,tienda) VALUES (%s,%s,%s)" , (item['titulo'],item['precio'],'ZMART'))
+			self.cursor.execute("INSERT INTO solovideojuegos (titulo,precio,tienda,link,sku,plataforma) VALUES (%s,%s,%s,%s,%s,%s)" , (item['titulo'],item['precio'],'ZMART',item['link'],item['sku'],item['plataforma']) )
 
 			self.conn.commit()
 

@@ -15,6 +15,9 @@ class SVGItem(scrapy.Item):
 	#info de producto
 	titulo = scrapy.Field()
 	precio = scrapy.Field()
+	link = scrapy.Field()
+	sku = scrapy.Field()
+	plataforma = scrapy.Field()
 	#telefono = scrapy.Field()
 	#email = scrapy.Field()
 	#clas = scrapy.Field()
